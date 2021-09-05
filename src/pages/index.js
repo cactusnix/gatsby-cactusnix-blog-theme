@@ -1,12 +1,12 @@
 import React from "react";
-import Navigation from "../components/Navigation";
-import Footer from "../components/Footer";
+import Layout from "../components/layout";
 
 export default function Index() {
   return (
     <div>
-      <Navigation />
-      <Footer />
+      <Layout>
+        <div>test</div>
+      </Layout>
     </div>
   );
 }

@@ -17,14 +17,14 @@ export default function Navigation() {
   `);
   const { title, menuLinks = [] } = data.site.siteMetadata;
   return (
-    <div className="w-screen bg-gray-50 px-7 py-4 flex justify-between items-center">
+    <div className="w-screen bg-gray-50 px-20 py-4 flex justify-between items-center">
       <div className="text-2xl font-medium">
         <Link to="/">{title}</Link>
       </div>
       <div className="text-base">
         {menuLinks.map((it) => {
           return (
-            <Link className="ml-5" to={it.link}>
+            <Link key={it.link} className="ml-16" to={it.link}>
               {it.name}
             </Link>
           );
