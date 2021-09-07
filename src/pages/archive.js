@@ -1,5 +1,6 @@
 import { graphql, Link, useStaticQuery } from "gatsby";
 import React from "react";
+import Layout from "../components/layout";
 
 export default function Archive() {
   const data = useStaticQuery(graphql`
@@ -38,24 +39,25 @@ export default function Archive() {
       });
     }
   });
-  console.log(result);
   return (
-    <div>
-      {result.map((it) => {
-        return (
-          <div>
-            {it.year}
-            {it.list.map((temp) => {
-              return (
-                <div>
-                  <Link to={temp.slug}>{temp.title}</Link>
-                  <div>{temp.monthDay}</div>
-                </div>
-              );
-            })}
-          </div>
-        );
-      })}
-    </div>
+    <Layout>
+      <div>
+        {result.map((it) => {
+          return (
+            <div>
+              {it.year}
+              {it.list.map((temp) => {
+                return (
+                  <div>
+                    <Link to={temp.slug}>{temp.title}</Link>
+                    <div>{temp.monthDay}</div>
+                  </div>
+                );
+              })}
+            </div>
+          );
+        })}
+      </div>
+    </Layout>
   );
 }

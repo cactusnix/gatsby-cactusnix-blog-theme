@@ -1,11 +1,15 @@
-import { graphql, useStaticQuery } from "gatsby";
+import { graphql } from "gatsby";
 import React from "react";
+import Layout from "../components/layout";
 
-export default function Post({ data }) {
+export default function Post({ data, pageContext }) {
   const { html } = data.markdownRemark;
-  console.log(data);
+  console.log(pageContext);
   return (
-    <div dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }}></div>
+    <Layout>
+      <div dangerouslySetInnerHTML={{ __html: html }}></div>
+      <div></div>
+    </Layout>
   );
 }
 

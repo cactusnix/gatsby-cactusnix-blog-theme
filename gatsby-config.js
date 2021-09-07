@@ -7,7 +7,7 @@ module.exports = {
     menuLinks: [
       {
         name: "home",
-        link: "/",
+        link: "/blog",
       },
       {
         name: "archive",
@@ -18,8 +18,12 @@ module.exports = {
         link: "/tags",
       },
       {
+        name: "projects",
+        link: "/blog/posts/projects",
+      },
+      {
         name: "about",
-        link: "/about",
+        link: "/blog/posts/about",
       },
     ],
   },
@@ -30,14 +34,7 @@ module.exports = {
     {
       resolve: "gatsby-transformer-remark",
       options: {
-        plugins: [
-          {
-            resolve: `gatsby-remark-images`,
-            options: {
-              maxWidth: 800,
-            },
-          },
-        ],
+        plugins: ["gatsby-remark-images"],
       },
     },
     {
