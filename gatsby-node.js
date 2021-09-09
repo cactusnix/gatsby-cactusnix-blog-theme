@@ -9,7 +9,7 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
     createNodeField({
       name: "slug",
       node,
-      value: `/blog/posts${value}`,
+      value: `/posts${value}`,
     });
   }
 };
@@ -19,7 +19,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   const { createPage } = actions;
   const result = await graphql(`
     {
-      allMarkdownRemark {
+      allMarkdownRemark(sort: { fields: frontmatter___date, order: DESC }) {
         edges {
           node {
             id
@@ -41,7 +41,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   const perPage = 10;
   Array.from({ length: Math.ceil(posts.length / perPage) }, (_, i) => {
     createPage({
-      path: i === 0 ? "/blog" : `/blog/${i + 1}`,
+      path: i === 0 ? "/" : `/page/${i + 1}`,
       component: path.resolve("./src/templates/posts.js"),
       context: {
         limit: perPage,
@@ -52,7 +52,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   });
   posts.forEach(({ node }, index) => {
     const prev = index === posts.length - 1 ? null : posts[index + 1].node;
-    const next = index === 0 ? : posts[index -1].node
+    const next = index === 0 ? null : posts[index - 1].node;
     createPage({
       path: node.fields.slug,
       component: path.resolve("./src/templates/post.js"),

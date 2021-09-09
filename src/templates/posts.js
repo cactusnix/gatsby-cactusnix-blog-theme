@@ -8,9 +8,9 @@ export default function Posts({ data, pageContext }) {
   const pageInfo = data.allMarkdownRemark.pageInfo;
   const prevLink =
     pageContext.currentPage - 1 === 1
-      ? "/blog"
-      : `/blog/${pageContext.currentPage - 1}`;
-  const nextLink = `/blog/${pageContext.currentPage + 1}`;
+      ? "/"
+      : `/page/${pageContext.currentPage - 1}`;
+  const nextLink = `/page/${pageContext.currentPage + 1}`;
   return (
     <Layout>
       <Bio />
