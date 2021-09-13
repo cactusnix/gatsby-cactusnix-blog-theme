@@ -13,7 +13,7 @@ export default function Bio() {
   `);
   const { description } = data.site.siteMetadata;
   return (
-    <div>
+    <div className="w-screen bio flex justify-center items-center">
       <div>{description}</div>
     </div>
   );

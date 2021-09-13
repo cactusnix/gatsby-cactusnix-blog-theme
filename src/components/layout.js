@@ -6,7 +6,7 @@ export default function Layout({ children }) {
   return (
     <div>
       <Navigation />
-      {children}
+      <div className="flex flex-col items-center">{children}</div>
       <Footer />
     </div>
   );

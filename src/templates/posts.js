@@ -14,7 +14,7 @@ export default function Posts({ data, pageContext }) {
   return (
     <Layout>
       <Bio />
-      <div className="min-h-screen">
+      <div className="min-h-screen max-w-screen-sm">
         {posts.map(({ node }) => {
           return (
             <Link key={node.id} to={node.fields.slug}>

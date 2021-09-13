@@ -1,0 +1,3 @@
+.bio {
+  height: calc(100vh - theme("height.14"));
+}

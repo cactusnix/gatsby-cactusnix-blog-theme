@@ -6,23 +6,23 @@ module.exports = {
     since: "2017",
     menuLinks: [
       {
-        name: "home",
-        link: "/blog",
+        name: "Home",
+        link: "/",
       },
       {
-        name: "archive",
+        name: "Archive",
         link: "/archive",
       },
       {
-        name: "tags",
+        name: "Tags",
         link: "/tags",
       },
       {
-        name: "projects",
+        name: "Projects",
         link: "/posts/projects",
       },
       {
-        name: "about",
+        name: "About",
         link: "/posts/about",
       },
     ],
