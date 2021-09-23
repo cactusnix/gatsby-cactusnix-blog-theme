@@ -12,8 +12,6 @@ export default function Archive() {
               year: date(formatString: "YYYY")
               monthDay: date(formatString: "MM-DD")
               title
-            }
-            fields {
               slug
             }
           }
@@ -28,7 +26,7 @@ export default function Archive() {
     const item = {
       title: node.frontmatter.title,
       monthDay: node.frontmatter.monthDay,
-      slug: node.fields.slug,
+      slug: node.frontmatter.slug,
     };
     if (index > -1) {
       result[index].list.push(item);

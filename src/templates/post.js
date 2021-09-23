@@ -9,10 +9,14 @@ export default function Post({ data, pageContext }) {
     <Layout>
       <div dangerouslySetInnerHTML={{ __html: html }}></div>
       <div>
-        {prev && <Link to={prev.fields.slug}>{prev.frontmatter.title}</Link>}
+        {prev && (
+          <Link to={prev.frontmatter.slug}>{prev.frontmatter.title}</Link>
+        )}
       </div>
       <div>
-        {next && <Link to={next.fields.slug}>{next.frontmatter.title}</Link>}
+        {next && (
+          <Link to={next.frontmatter.slug}>{next.frontmatter.title}</Link>
+        )}
       </div>
     </Layout>
   );

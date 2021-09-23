@@ -17,18 +17,14 @@ export default function Navigation() {
   `);
   const { title, menuLinks = [] } = data.site.siteMetadata;
   return (
-    <div className="w-screen h-14 bg-gray-50 flex justify-between items-center">
-      <div className="text-2xl font-medium">
+    <div className="w-screen h-14 bg-gray-50 px-4 lg:px-10 flex justify-between items-center">
+      <div className="text-base lg:text-xl">
         <Link to="/">{title}</Link>
       </div>
-      <div className="text-base">
+      <div className="text-base hidden lg:block">
         {menuLinks.map((it) => {
           return (
-            <Link
-              key={it.link}
-              className="lg:ml-16 md:ml-8 hover:text-8xl"
-              to={it.link}
-            >
+            <Link key={it.link} className="ml-16" to={it.link}>
               {it.name}
             </Link>
           );

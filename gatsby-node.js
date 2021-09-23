@@ -2,15 +2,15 @@ const { createFilePath } = require("gatsby-source-filesystem");
 const path = require("path");
 
 // create slug for each posts md
-exports.onCreateNode = ({ node, actions, getNode }) => {
+exports.onCreateNode = async ({ node, getNode }) => {
   if (node.internal.type === "MarkdownRemark") {
-    const value = createFilePath({ node, getNode }).replaceAll(" ", "");
-    const { createNodeField } = actions;
-    createNodeField({
-      name: "slug",
-      node,
-      value: `/posts${value}`,
-    });
+    node.frontmatter.slug = `/posts${createFilePath({ node, getNode }).replace(
+      / /g,
+      ""
+    )}`;
+    node.frontmatter.cover = node.frontmatter.cover
+      ? node.frontmatter.cover
+      : "../assets/covers/defaultCover.png";
   }
 };
 
@@ -23,10 +23,8 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
         edges {
           node {
             id
-            fields {
-              slug
-            }
             frontmatter {
+              slug
               title
             }
           }
@@ -54,7 +52,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     const prev = index === posts.length - 1 ? null : posts[index + 1].node;
     const next = index === 0 ? null : posts[index - 1].node;
     createPage({
-      path: node.fields.slug,
+      path: node.frontmatter.slug,
       component: path.resolve("./src/templates/post.js"),
       context: {
         id: node.id,
