@@ -5,3 +5,9 @@
 - [ ] google analysis
 - [ ] social link
 - [ ] automaticlly generate slug for each md
+
+## Problems
+
+TODO
+
+- [ ] posts.js img div doesn't work with overflow hidden

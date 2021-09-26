@@ -15,21 +15,30 @@ export default function Posts({ data, pageContext }) {
   return (
     <Layout>
       {!pageInfo.hasPreviousPage && <Bio />}
-      <div className="min-h-screen max-w-screen-md my-16">
+      <div className="min-h-screen max-w-screen-md my-16 px-4">
         {posts.map(({ node }) => {
           return (
-            <div key={node.id} className="my-4 bg-white rounded-md shadow">
-              <div>
-                <GatsbyImage
-                  image={node.frontmatter.cover.childImageSharp.gatsbyImageData}
-                />
-              </div>
-              <div>
-                <Link key={node.id} to={node.frontmatter.slug}>
+            <div
+              key={node.id}
+              className="my-10 box-border bg-white rounded-xl shadow-md overflow-hidden md:flex"
+            >
+              <GatsbyImage
+                className="w-full md:w-60 md:flex-shrink-0"
+                imgClassName="rounded-t-xl md:rounded-bl-xl md:rounded-tr-none"
+                layout="fullWidth"
+                image={node.frontmatter.cover.childImageSharp.gatsbyImageData}
+                alt="it's cover"
+              />
+              <div className="flex flex-col justify-center py-8 px-10">
+                <Link
+                  key={node.id}
+                  to={node.frontmatter.slug}
+                  className="text-lg font-bold hover:underline"
+                >
                   {node.frontmatter.title}
                 </Link>
-                <div>{node.frontmatter.date}</div>
-                <div>{node.excerpt}</div>
+                <div className="text-sm">{node.frontmatter.date}</div>
+                <div className="pt-2">{node.excerpt}</div>
               </div>
             </div>
           );
@@ -54,11 +63,11 @@ export const query = graphql`
         node {
           frontmatter {
             title
-            date
+            date(formatString: "MM-DD/YYYY HH:mm")
             slug
             cover {
               childImageSharp {
-                gatsbyImageData(layout: FIXED)
+                gatsbyImageData
               }
             }
           }
