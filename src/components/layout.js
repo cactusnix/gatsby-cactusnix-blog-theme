@@ -4,7 +4,7 @@ import React from "react";
 
 export default function Layout({ children }) {
   return (
-    <div className="root">
+    <div>
       <Navigation />
       <div className="flex flex-col items-center">{children}</div>
       <Footer />

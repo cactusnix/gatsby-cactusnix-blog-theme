@@ -24,7 +24,7 @@ export default function Navigation() {
       <div className="text-base hidden lg:block">
         {menuLinks.map((it) => {
           return (
-            <Link key={it.link} className="ml-16" to={it.link}>
+            <Link key={it.link} className="ml-16 hover:underline" to={it.link}>
               {it.name}
             </Link>
           );

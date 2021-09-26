@@ -7,15 +7,19 @@ export default function Post({ data, pageContext }) {
   const { prev, next } = pageContext;
   return (
     <Layout>
-      <div dangerouslySetInnerHTML={{ __html: html }}></div>
-      <div>
-        {prev && (
-          <Link to={prev.frontmatter.slug}>{prev.frontmatter.title}</Link>
-        )}
+      <div className="card-wrapper rounded-xl shadow-md">
+        <div dangerouslySetInnerHTML={{ __html: html }}></div>
       </div>
-      <div>
+      <div className="pagination">
+        {prev && (
+          <Link to={prev.frontmatter.slug} className="pagination-btn prev">
+            {prev.frontmatter.title}
+          </Link>
+        )}
         {next && (
-          <Link to={next.frontmatter.slug}>{next.frontmatter.title}</Link>
+          <Link to={next.frontmatter.slug} className="pagination-btn next">
+            {next.frontmatter.title}
+          </Link>
         )}
       </div>
     </Layout>

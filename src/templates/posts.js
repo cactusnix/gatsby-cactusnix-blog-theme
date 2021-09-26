@@ -15,7 +15,7 @@ export default function Posts({ data, pageContext }) {
   return (
     <Layout>
       {!pageInfo.hasPreviousPage && <Bio />}
-      <div className="min-h-screen max-w-screen-md my-16 px-4">
+      <div className="card-wrapper">
         {posts.map(({ node }) => {
           return (
             <div
@@ -43,9 +43,17 @@ export default function Posts({ data, pageContext }) {
             </div>
           );
         })}
-        <div>
-          {pageInfo.hasPreviousPage && <Link to={prevLink}>prev</Link>}
-          {pageInfo.hasNextPage && <Link to={nextLink}>next</Link>}
+        <div className="pagination">
+          {pageInfo.hasPreviousPage && (
+            <Link to={prevLink} className="pagination-btn prev">
+              prev
+            </Link>
+          )}
+          {pageInfo.hasNextPage && (
+            <Link to={nextLink} className="pagination-btn next">
+              next
+            </Link>
+          )}
         </div>
       </div>
     </Layout>
