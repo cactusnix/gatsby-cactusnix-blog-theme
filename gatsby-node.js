@@ -37,27 +37,55 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   }
   const posts = result.data.allMarkdownRemark.edges;
   const perPage = 10;
-  Array.from({ length: Math.ceil(posts.length / perPage) }, (_, i) => {
+  const length = Math.ceil(posts.length / perPage);
+  Array.from({ length: length }, (_, i) => {
     createPage({
       path: i === 0 ? "/" : `/page/${i + 1}`,
       component: path.resolve("./src/templates/posts.js"),
       context: {
         limit: perPage,
         skip: i * perPage,
-        currentPage: i + 1,
+        pageInfo: {
+          prev:
+            i === 0
+              ? null
+              : {
+                  slug: i === 1 ? "/" : `/page/${i}`,
+                  title: "Prev",
+                },
+          next:
+            i === length - 1
+              ? null
+              : {
+                  slug: `/page/${i + 2}`,
+                  title: "Next",
+                },
+        },
       },
     });
   });
   posts.forEach(({ node }, index) => {
-    const prev = index === posts.length - 1 ? null : posts[index + 1].node;
-    const next = index === 0 ? null : posts[index - 1].node;
     createPage({
       path: node.frontmatter.slug,
       component: path.resolve("./src/templates/post.js"),
       context: {
         id: node.id,
-        prev: prev,
-        next: next,
+        pageInfo: {
+          prev:
+            index === posts.length - 1
+              ? null
+              : {
+                  slug: posts[index + 1].node.frontmatter.slug,
+                  title: posts[index + 1].node.frontmatter.title,
+                },
+          next:
+            index === 0
+              ? null
+              : {
+                  slug: posts[index - 1].node.frontmatter.slug,
+                  title: posts[index - 1].node.frontmatter.title,
+                },
+        },
       },
     });
   });

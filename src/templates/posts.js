@@ -1,30 +1,24 @@
 import { graphql, Link } from "gatsby";
+import { GatsbyImage } from "gatsby-plugin-image";
 import React from "react";
 import Layout from "../components/layout";
 import Bio from "../components/bio";
-import { GatsbyImage } from "gatsby-plugin-image";
+import Pagination from "../components/pagination";
 
 export default function Posts({ data, pageContext }) {
   const posts = data.allMarkdownRemark.edges;
-  const pageInfo = data.allMarkdownRemark.pageInfo;
-  const prevLink =
-    pageContext.currentPage - 1 === 1
-      ? "/"
-      : `/page/${pageContext.currentPage - 1}`;
-  const nextLink = `/page/${pageContext.currentPage + 1}`;
   return (
     <Layout>
-      {!pageInfo.hasPreviousPage && <Bio />}
-      <div className="card-wrapper">
+      {pageContext.skip === 0 && <Bio />}
+      <div className="display-wrapper">
         {posts.map(({ node }) => {
           return (
             <div
               key={node.id}
-              className="my-10 box-border bg-white rounded-xl shadow-md overflow-hidden md:flex"
+              className="box-border bg-white shadow-md overflow-hidden md:flex"
             >
               <GatsbyImage
                 className="w-full md:w-60 md:flex-shrink-0"
-                imgClassName="rounded-t-xl md:rounded-bl-xl md:rounded-tr-none"
                 layout="fullWidth"
                 image={node.frontmatter.cover.childImageSharp.gatsbyImageData}
                 alt="it's cover"
@@ -43,18 +37,7 @@ export default function Posts({ data, pageContext }) {
             </div>
           );
         })}
-        <div className="pagination">
-          {pageInfo.hasPreviousPage && (
-            <Link to={prevLink} className="pagination-btn prev">
-              prev
-            </Link>
-          )}
-          {pageInfo.hasNextPage && (
-            <Link to={nextLink} className="pagination-btn next">
-              next
-            </Link>
-          )}
-        </div>
+        <Pagination pageInfo={pageContext.pageInfo} />
       </div>
     </Layout>
   );
@@ -82,10 +65,6 @@ export const query = graphql`
           excerpt
           id
         }
-      }
-      pageInfo {
-        hasPreviousPage
-        hasNextPage
       }
     }
   }

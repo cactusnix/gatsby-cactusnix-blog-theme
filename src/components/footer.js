@@ -15,7 +15,7 @@ export default function Footer() {
   return (
     <div className="w-screen flex justify-center items-center">
       <div>
-        Copyright &copy; {since} - {new Date().getFullYear()}&nbsp;
+        &copy; {since} - {new Date().getFullYear()}&nbsp;
       </div>
       <div>
         Powered By <a href="https://www.gatsbyjs.com">Gatsby</a>&nbsp;

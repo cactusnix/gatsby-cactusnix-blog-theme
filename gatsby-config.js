@@ -27,7 +27,7 @@ module.exports = {
         link: "/posts/about",
       },
     ],
-    socialLinks: ["twitter", "github", "jike", "email"],
+    socialLinks: ["twitter", "github", "jike"],
   },
   plugins: [
     "gatsby-plugin-postcss",

@@ -1,22 +1,7 @@
-html body {
-  background-color: #fbfbfd;
-}
 .bio {
   height: calc(100vh - theme("height.14"));
 }
 
-.pagination .prev {
-  @apply float-left;
-}
-
-.pagination .next {
-  @apply float-right;
-}
-
-.pagination-btn {
-  @apply bg-white rounded shadow p-2;
-}
-
-.card-wrapper {
-  @apply min-h-screen max-w-screen-md my-16 p-4;
+.display-wrapper {
+  @apply min-h-screen max-w-screen-md px-4;
 }

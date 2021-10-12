@@ -17,7 +17,7 @@ export default function Navigation() {
   `);
   const { title, menuLinks = [] } = data.site.siteMetadata;
   return (
-    <div className="w-screen h-14 bg-gray-50 px-4 lg:px-10 flex justify-between items-center">
+    <div className="w-screen h-14 px-4 lg:px-10 flex justify-between items-center">
       <div className="text-base lg:text-xl">
         <Link to="/">{title}</Link>
       </div>
