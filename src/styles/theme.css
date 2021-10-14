@@ -1,7 +1,0 @@
-.bio {
-  height: calc(100vh - theme("height.14"));
-}
-
-.display-wrapper {
-  @apply min-h-screen max-w-screen-md px-4;
-}

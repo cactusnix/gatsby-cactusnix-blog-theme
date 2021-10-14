@@ -12,3 +12,7 @@
 TODO
 
 - [ ] posts.js img div doesn't work with overflow hidden
+
+## Plan
+
+- [ ] 404 component ( support dark mode & mobile view)
