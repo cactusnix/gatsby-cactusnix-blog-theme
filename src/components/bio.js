@@ -8,7 +8,10 @@ export default function Bio() {
       site {
         siteMetadata {
           description
-          socialLinks
+          socialLinks {
+            link
+            name
+          }
         }
       }
       jike: file(relativePath: { eq: "jike.png" }) {
@@ -55,15 +58,15 @@ export default function Bio() {
         </div>
         {socialLinks.length > 0 && (
           <div>
-            {socialLinks.map((link) => {
-              return data[link] && data[link] ? (
+            {socialLinks.map((it) => {
+              return data[it.name] && data[it.name] ? (
                 <GatsbyImage
-                  key={link}
+                  key={it.name}
                   className="w-6 box-border mx-2"
                   imgClassName="rounded-xl"
-                  image={data[link].childImageSharp.gatsbyImageData}
+                  image={data[it.name].childImageSharp.gatsbyImageData}
                   layout="fullWidth"
-                  alt={link}
+                  alt={it.name}
                 />
               ) : null;
             })}

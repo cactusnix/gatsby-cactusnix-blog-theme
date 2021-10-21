@@ -17,18 +17,19 @@ export default function Navigation() {
   `);
   const { title, menuLinks = [] } = data.site.siteMetadata;
   return (
-    <div className="w-screen h-14 px-4 lg:px-10 flex justify-between items-center">
-      <div className="text-base lg:text-xl">
+    <div className="w-screen flex items-center justify-center h-12 text-content-300 dark:text-content-300-dark bg-block-100 dark:bg-block-100-dark">
+      <div className="font-medium">
         <Link to="/">{title}</Link>
       </div>
-      <div className="text-base hidden lg:block">
+      <div className="text-sm hidden font-light lg:block">
         {menuLinks.map((it) => {
           return (
-            <Link key={it.link} className="ml-16 hover:underline" to={it.link}>
+            <Link key={it.link} className="ml-16" to={it.link}>
               {it.name}
             </Link>
           );
         })}
+        <i className="inline-block ml-16 w-5" data-eva="search" />
       </div>
     </div>
   );

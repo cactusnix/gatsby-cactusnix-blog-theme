@@ -4,7 +4,7 @@
 - [ ] search by aligo
 - [ ] google analysis
 - [ ] social link
-- [ ] automaticlly generate slug for each md
+- [ ] automatically generate slug for each md
 - [ ] pin post
 
 ## Problems
@@ -18,3 +18,4 @@ TODO
 - [x] 404 component, support dark mode & mobile view
 - [x] footer component, support dark mode & mobile view
 - [ ] navigation component, support dark mode & mobile view
+- [ ] bio component, support dark mode & mobile view

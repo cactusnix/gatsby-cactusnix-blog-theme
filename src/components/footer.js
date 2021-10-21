@@ -13,10 +13,18 @@ export default function Footer() {
   `);
   const { since } = data.site.siteMetadata;
   return (
-    <div className="w-screen flex justify-center items-center pb-1 text-xs lg:text-sm text-content-100 dark:text-content-100-dark">
+    <div className="w-screen flex justify-center items-center py-1 text-xs lg:text-sm text-content-100 dark:text-content-100-dark bg-block-100 dark:bg-block-100-dark">
       <div>
         Copyright &copy; {since} - {new Date().getFullYear()}&nbsp;
       </div>
+      <i
+        className="w-3.5 lg:w-4"
+        data-eva="heart"
+        data-eva-animation="pulse"
+        data-eva-hover="false"
+        data-eva-infinite="true"
+      />
+      &nbsp;
       <div>
         Theme{" "}
         <a
