@@ -15,4 +15,6 @@ TODO
 
 ## Plan
 
-- [ ] 404 component ( support dark mode & mobile view)
+- [x] 404 component, support dark mode & mobile view
+- [x] footer component, support dark mode & mobile view
+- [ ] navigation component, support dark mode & mobile view
