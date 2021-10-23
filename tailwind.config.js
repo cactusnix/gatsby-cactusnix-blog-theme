@@ -12,11 +12,11 @@ module.exports = {
             DEFAULT: "#f3f3f3",
             dark: "#1d1d1f",
           },
-          // for secondary navigator
+          // for card bg
           200: {
-            light: "#ffffff",
-            DEFAULT: "#ffffff",
-            dark: "#151516",
+            light: "#fafafa",
+            DEFAULT: "#fafafa",
+            dark: "#141414",
           },
           // for article bg
           300: {

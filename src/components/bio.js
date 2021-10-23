@@ -44,16 +44,16 @@ export default function Bio() {
   const { description, socialLinks } = data.site.siteMetadata;
   return (
     <>
-      <div className="w-screen bio flex flex-col justify-center items-center">
+      <div className="bio w-screen flex flex-col justify-center items-center">
         {data.avatar && (
           <GatsbyImage
-            className="w-14 md:w-16"
+            className="w-14 lg:w-16"
             image={data.avatar.childImageSharp.gatsbyImageData}
             layout="fullWidth"
             alt="avatar"
           />
         )}
-        <div className="md:text-2xl font-bold py-10 text-center">
+        <div className="py-12 text-center text-content-200 dark:text-content-200-dark lg:text-2xl">
           {description}
         </div>
         {socialLinks.length > 0 && (

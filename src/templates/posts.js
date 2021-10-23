@@ -1,6 +1,6 @@
+import React from "react";
 import { graphql, Link } from "gatsby";
 import { GatsbyImage } from "gatsby-plugin-image";
-import React from "react";
 import Layout from "../components/layout";
 import Bio from "../components/bio";
 import Pagination from "../components/pagination";
@@ -10,31 +10,28 @@ export default function Posts({ data, pageContext }) {
   return (
     <Layout>
       {pageContext.skip === 0 && <Bio />}
-      <div className="display-wrapper">
+      <div className="post-wrapper">
         {posts.map(({ node }) => {
           return (
-            <div
+            <Link
               key={node.id}
-              className="box-border bg-white shadow-md overflow-hidden md:flex"
+              to={node.frontmatter.slug}
+              className="flex flex-col box-border shadow-md mt-8 h-72 lg:h-48 lg:flex-row text-content-200 dark:text-content-200-dark"
             >
               <GatsbyImage
-                className="w-full md:w-60 md:flex-shrink-0"
+                className="h-20 w-full lg:w-60 lg:h-auto lg:flex-shrink-0"
                 layout="fullWidth"
                 image={node.frontmatter.cover.childImageSharp.gatsbyImageData}
                 alt="it's cover"
               />
-              <div className="flex flex-col justify-center py-8 px-10">
-                <Link
-                  key={node.id}
-                  to={node.frontmatter.slug}
-                  className="text-lg font-bold hover:underline"
-                >
+              <div className="flex-1 py-6 lg:py-7 px-4 lg:px-8 bg-block-200 dark:bg-block-200-dark ">
+                <div key={node.id} className="text-lg font-bold">
                   {node.frontmatter.title}
-                </Link>
-                <div className="text-sm">{node.frontmatter.date}</div>
-                <div className="pt-2">{node.excerpt}</div>
+                </div>
+                <div className="pt-1 pb-2 text-sm">{node.frontmatter.date}</div>
+                <div className="font-light">{node.excerpt}</div>
               </div>
-            </div>
+            </Link>
           );
         })}
         <Pagination pageInfo={pageContext.pageInfo} />
@@ -54,7 +51,7 @@ export const query = graphql`
         node {
           frontmatter {
             title
-            date(formatString: "MM-DD/YYYY HH:mm")
+            date(formatString: "MM,DD YYYY HH:mm")
             slug
             cover {
               childImageSharp {

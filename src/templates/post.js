@@ -7,7 +7,7 @@ export default function Post({ data, pageContext }) {
   const { html } = data.markdownRemark;
   return (
     <Layout>
-      <div className="display-wrapper">
+      <div className="post-wrapper">
         <div className="bg-white shadow-md">
           <div dangerouslySetInnerHTML={{ __html: html }}></div>
         </div>

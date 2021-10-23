@@ -8,9 +8,9 @@ export default function Layout({ children }) {
     eva.replace();
   }, []);
   return (
-    <div>
+    <div className="tracking-wide">
       <Navigation />
-      <div className="flex flex-col items-center text-content-200 dark:text-content-200-dark">
+      <div className="flex flex-col items-center bg-block-300 dark:bg-block-300-dark">
         {children}
       </div>
       <Footer />
