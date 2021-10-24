@@ -9,7 +9,7 @@
 
 /* for post wrapper */
 .post-wrapper {
-  @apply min-h-screen max-w-screen-md px-4;
+  @apply min-h-screen w-full lg:w-3/5 px-4;
 }
 
 /* for pagination btn */
