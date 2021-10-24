@@ -14,5 +14,10 @@
 
 /* for pagination btn */
 .pagination-btn {
-  @apply bg-block-200 dark:bg-block-200-dark text-content-200 dark:text-content-200-dark rounded shadow p-2;
+  @apply bg-block-200 dark:bg-block-200-dark;
+  @apply text-content-200 dark:text-content-200-dark;
+  @apply rounded shadow p-2;
+  @apply flex;
+  @apply justify-center items-center;
+  @apply transition duration-500 ease-in-out transform hover:scale-105;
 }

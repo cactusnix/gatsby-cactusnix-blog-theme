@@ -19,7 +19,7 @@ TODO
 - [x] footer component, support dark mode & mobile view
 - [x] navigation component, support dark mode & mobile view
 - [x] bio component, support dark mode & mobile view
-- [ ] posts component, support dark mode & mobile view
+- [x] posts component, support dark mode & mobile view
 - [ ] post component, support dark mode & mobile view
 - [ ] pagination component, support dark mode & mobile view
 - [ ] search function
