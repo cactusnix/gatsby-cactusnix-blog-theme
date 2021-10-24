@@ -7,10 +7,6 @@ module.exports = {
     since: "2017",
     menuLinks: [
       {
-        name: "Home",
-        link: "/",
-      },
-      {
         name: "Archive",
         link: "/archive",
       },

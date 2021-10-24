@@ -1,6 +1,5 @@
 import React from "react";
 import { graphql, Link } from "gatsby";
-import { GatsbyImage } from "gatsby-plugin-image";
 import Layout from "../components/layout";
 import Bio from "../components/bio";
 import Pagination from "../components/pagination";
@@ -16,19 +15,25 @@ export default function Posts({ data, pageContext }) {
             <Link
               key={node.id}
               to={node.frontmatter.slug}
-              className="flex flex-col box-border shadow-md mt-8 h-72 lg:h-48 lg:flex-row text-content-200 dark:text-content-200-dark"
+              className="flex flex-col box-border shadow-md mt-6 lg:flex-row 
+              text-content-200 dark:text-content-200-dark
+              bg-block-200 dark:bg-block-200-dark
+              transition duration-500 ease-in-out transform hover:scale-105"
             >
-              <GatsbyImage
-                className="h-20 w-full lg:w-60 lg:h-auto lg:flex-shrink-0"
+              {/* maybe someday I will use it for cover function */}
+              {/* <GatsbyImage
+                className="w-full lg:w-72"
                 layout="fullWidth"
                 image={node.frontmatter.cover.childImageSharp.gatsbyImageData}
                 alt="it's cover"
-              />
-              <div className="flex-1 py-6 lg:py-7 px-4 lg:px-8 bg-block-200 dark:bg-block-200-dark ">
-                <div key={node.id} className="text-lg font-bold">
+              /> */}
+              <div className="py-6 lg:py-7 px-4 lg:px-8">
+                <div className="text-xs text-content-300 dark:text-content-300-dark">
+                  {node.frontmatter.date}
+                </div>
+                <div key={node.id} className="pt-1 pb-2 text-xl font-bold">
                   {node.frontmatter.title}
                 </div>
-                <div className="pt-1 pb-2 text-sm">{node.frontmatter.date}</div>
                 <div className="font-light">{node.excerpt}</div>
               </div>
             </Link>
@@ -51,15 +56,10 @@ export const query = graphql`
         node {
           frontmatter {
             title
-            date(formatString: "MM,DD YYYY HH:mm")
+            date(formatString: "MMM DD, YYYY")
             slug
-            cover {
-              childImageSharp {
-                gatsbyImageData
-              }
-            }
           }
-          excerpt
+          excerpt(truncate: true, pruneLength: 85)
           id
         }
       }

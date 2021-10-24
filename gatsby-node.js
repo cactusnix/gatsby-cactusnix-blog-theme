@@ -8,9 +8,10 @@ exports.onCreateNode = async ({ node, getNode }) => {
       / /g,
       ""
     )}`;
-    node.frontmatter.cover = node.frontmatter.cover
-      ? node.frontmatter.cover
-      : "../assets/covers/defaultCover.png";
+    // maybe some day I will use cover for post
+    // node.frontmatter.cover = node.frontmatter.cover
+    //   ? node.frontmatter.cover
+    //   : "../assets/covers/defaultCover.png";
   }
 };
 

@@ -11,3 +11,8 @@
 .post-wrapper {
   @apply min-h-screen max-w-screen-md px-4;
 }
+
+/* for pagination btn */
+.pagination-btn {
+  @apply bg-block-200 dark:bg-block-200-dark text-content-200 dark:text-content-200-dark rounded shadow p-2;
+}

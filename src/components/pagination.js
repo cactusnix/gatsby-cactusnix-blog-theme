@@ -11,12 +11,12 @@ export default function Pagination({ pageInfo }) {
       })}
     >
       {prev && (
-        <Link to={prev.slug} className="bg-white rounded shadow p-2">
+        <Link to={prev.slug} className="pagination-btn">
           {prev.title}
         </Link>
       )}
       {next && (
-        <Link to={next.slug} className="bg-white rounded shadow p-2">
+        <Link to={next.slug} className="pagination-btn">
           {next.title}
         </Link>
       )}
