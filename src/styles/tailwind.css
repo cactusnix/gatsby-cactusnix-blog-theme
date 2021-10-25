@@ -2,14 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
-/* for bio */
-.bio {
-  height: calc(100vh - theme("height.12"));
-}
-
 /* for post wrapper */
 .post-wrapper {
-  min-height: calc(100vh - theme("height.12") - theme("height.10"));
+  min-height: calc(100vh - theme("height.10"));
   @apply w-full lg:w-3/5 px-4;
 }
 

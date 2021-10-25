@@ -1,6 +1,6 @@
-import classNames from "classnames";
-import { Link } from "gatsby";
 import React from "react";
+import { Link } from "gatsby";
+import classNames from "classnames";
 
 export default function Pagination({ pageInfo }) {
   const { prev, next } = pageInfo;

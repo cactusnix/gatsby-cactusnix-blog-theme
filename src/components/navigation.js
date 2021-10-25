@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useStaticQuery, graphql, Link } from "gatsby";
+import classNames from "classnames";
 
 export default function Navigation() {
   const data = useStaticQuery(graphql`
@@ -20,11 +21,38 @@ export default function Navigation() {
   const darkMode =
     window.matchMedia &&
     window.matchMedia("(prefers-color-scheme: dark)").matches;
+  const [scrolled, setScrolled] = useState(false);
+  useEffect(() => {
+    const handleScroll = () => {
+      const isScrolled = window.scrollY > 14 ? true : false;
+      if (isScrolled !== scrolled) {
+        setScrolled(isScrolled);
+      }
+    };
+    document.addEventListener("scroll", handleScroll, { passive: true });
+    return () => {
+      // clean up the event handler when the component unmounts
+      document.removeEventListener("scroll", handleScroll);
+    };
+  }, [scrolled]);
   return (
     <div
-      className="w-screen flex items-center justify-center h-12 
-      text-content-300 dark:text-content-300-dark 
-      bg-block-100 dark:bg-block-100-dark"
+      className={classNames(
+        "w-screen",
+        "flex",
+        "items-center",
+        "justify-center",
+        "h-12",
+        "text-content-300",
+        "dark:text-content-300-dark",
+        "bg-block-100",
+        "dark:bg-block-100-dark",
+        "fixed",
+        "z-10",
+        {
+          "bg-opacity-0": !scrolled,
+        }
+      )}
     >
       {/* TODO use tailwind */}
       <i

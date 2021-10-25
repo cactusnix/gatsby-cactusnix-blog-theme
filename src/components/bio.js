@@ -44,7 +44,7 @@ export default function Bio() {
   const { description, socialLinks } = data.site.siteMetadata;
   return (
     <>
-      <div className="bio w-screen flex flex-col justify-center items-center">
+      <div className="h-screen w-screen flex flex-col justify-center items-center">
         {data.avatar && (
           <GatsbyImage
             className="w-14 lg:w-16"
