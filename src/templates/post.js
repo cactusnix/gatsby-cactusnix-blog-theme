@@ -5,10 +5,23 @@ import Pagination from "../components/pagination";
 
 export default function Post({ data, pageContext }) {
   const { html } = data.markdownRemark;
+  const { date, title } = data.markdownRemark.frontmatter;
   return (
     <Layout>
       <div className="post-wrapper">
-        <div className="bg-white shadow-md">
+        <div
+          className="shadow-md 
+          bg-block-200 dark:bg-block-200-dark 
+          text-content-200 dark:text-content-200-dark px-7 py-6 mt-6"
+        >
+          <div className="text-2xl font-bold">{title}</div>
+          <div className="pt-2 text-sm text-content-300 dark:text-content-300-dark">
+            {date}
+          </div>
+          <div
+            className="mt-2 mb-6 bg-content-200 dark:bg-content-200-dark"
+            style={{ height: "1px" }}
+          />
           <div dangerouslySetInnerHTML={{ __html: html }}></div>
         </div>
         <Pagination pageInfo={pageContext.pageInfo} />
@@ -22,7 +35,7 @@ export const query = graphql`
     markdownRemark(id: { eq: $id }) {
       html
       frontmatter {
-        date
+        date(formatString: "MMM DD, YYYY")
         title
       }
     }

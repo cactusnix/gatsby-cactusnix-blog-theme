@@ -17,7 +17,7 @@ export default function Footer() {
     window.matchMedia &&
     window.matchMedia("(prefers-color-scheme: dark)").matches;
   return (
-    <div className="w-screen flex justify-center items-center py-1 text-xs lg:text-sm text-content-100 dark:text-content-100-dark bg-block-100 dark:bg-block-100-dark">
+    <div className="w-screen h-10 flex justify-center items-center text-xs lg:text-sm text-content-100 dark:text-content-100-dark bg-block-100 dark:bg-block-100-dark">
       <div>
         Copyright &copy; {since} - {new Date().getFullYear()}&nbsp;
       </div>
