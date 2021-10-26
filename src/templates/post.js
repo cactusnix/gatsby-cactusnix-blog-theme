@@ -23,7 +23,10 @@ export default function Post({ data, pageContext }) {
             className="mt-2 mb-6 bg-content-200 dark:bg-content-200-dark"
             style={{ height: "1px" }}
           />
-          <div dangerouslySetInnerHTML={{ __html: html }}></div>
+          <div
+            class="prose dark:prose-light"
+            dangerouslySetInnerHTML={{ __html: html }}
+          ></div>
         </div>
         <Pagination pageInfo={pageContext.pageInfo} />
       </div>

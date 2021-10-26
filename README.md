@@ -5,8 +5,9 @@
 - [x] navigation component, support dark mode & mobile view
 - [x] bio component, support dark mode & mobile view
 - [x] posts component, support dark mode & mobile view
-- [ ] post component, support dark mode & mobile view
+- [x] post component, support dark mode & mobile view
 - [x] pagination component, support dark mode & mobile view
+- [x] markdown style, use plugin code highlight & tailwind/typography
 - [ ] search function
 - [ ] mobile menu function
 - [ ] social link function
@@ -19,3 +20,4 @@
 ## Maybe TODO
 
 - [ ] post page min height 100%
+- [ ] custom tailwind/typography
