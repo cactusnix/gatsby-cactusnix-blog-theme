@@ -8,9 +8,13 @@
 - [x] post component, support dark mode & mobile view
 - [x] pagination component, support dark mode & mobile view
 - [x] markdown style, use plugin code highlight & tailwind/typography
+- [ ] archive component, support dark mode & mobile view
 - [ ] search function
 - [ ] mobile menu function
 - [ ] social link function
+- [ ] tag function
+- [ ] google analysis
+- [ ] fix some sensitive data to publish theme
 
 ## TODO
 

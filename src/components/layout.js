@@ -5,15 +5,15 @@ import Navigation from "../components/navigation";
 import Footer from "../components/footer";
 deckDeckGoHighlightElement();
 
-export default function Layout({ children }) {
+export default function Layout(props) {
   useEffect(() => {
     eva.replace();
   }, []);
   return (
     <div className="tracking-wide">
-      <Navigation />
+      <Navigation supportScrolled={props.supportScrolled} />
       <div className="flex flex-col items-center bg-block-300 dark:bg-block-300-dark">
-        {children}
+        {props.children}
       </div>
       <Footer />
     </div>

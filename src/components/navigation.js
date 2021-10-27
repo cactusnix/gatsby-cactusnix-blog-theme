@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useStaticQuery, graphql, Link } from "gatsby";
 import classNames from "classnames";
 
-export default function Navigation() {
+export default function Navigation(props) {
   const data = useStaticQuery(graphql`
     {
       site {
@@ -50,7 +50,7 @@ export default function Navigation() {
         "fixed",
         "z-10",
         {
-          "bg-opacity-0": !scrolled,
+          "bg-opacity-0": props.supportScrolled && !scrolled,
         }
       )}
     >

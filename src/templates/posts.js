@@ -1,5 +1,6 @@
 import React from "react";
 import { graphql, Link } from "gatsby";
+import classNames from "classnames";
 import Layout from "../components/layout";
 import Bio from "../components/bio";
 import Pagination from "../components/pagination";
@@ -7,9 +8,13 @@ import Pagination from "../components/pagination";
 export default function Posts({ data, pageContext }) {
   const posts = data.allMarkdownRemark.edges;
   return (
-    <Layout>
+    <Layout supportScrolled={pageContext.skip === 0}>
       {pageContext.skip === 0 && <Bio />}
-      <div className="post-wrapper">
+      <div
+        className={classNames("post-wrapper", {
+          "mt-20": pageContext.skip !== 0,
+        })}
+      >
         {posts.map(({ node }) => {
           return (
             <Link
