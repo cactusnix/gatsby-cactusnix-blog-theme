@@ -39,25 +39,24 @@ export default function Archive() {
   });
   return (
     <Layout>
-      <div
-        className="base-wrapper card-wrapper shadow-md mt-20 mb-10 
-        divide-y-2 di divide-solid"
-      >
-        {result.map((it) => {
-          return (
-            <div>
-              <div>{it.year} Year</div>
-              {it.list.map((temp) => {
-                return (
-                  <div className="flex justify-between">
-                    <Link to={temp.slug}>{temp.title}</Link>
-                    <div>{temp.publishTime}</div>
-                  </div>
-                );
-              })}
-            </div>
-          );
-        })}
+      <div className="base-wrapper">
+        <div className="card-wrapper divide-y-2 di divide-solid">
+          {result.map((it) => {
+            return (
+              <div>
+                <div>{it.year} Year</div>
+                {it.list.map((temp) => {
+                  return (
+                    <div className="flex justify-between">
+                      <Link to={temp.slug}>{temp.title}</Link>
+                      <div>{temp.publishTime}</div>
+                    </div>
+                  );
+                })}
+              </div>
+            );
+          })}
+        </div>
       </div>
     </Layout>
   );

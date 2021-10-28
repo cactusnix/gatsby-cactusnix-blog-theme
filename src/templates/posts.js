@@ -1,6 +1,5 @@
 import React from "react";
 import { graphql, Link } from "gatsby";
-import classNames from "classnames";
 import Layout from "../components/layout";
 import Bio from "../components/bio";
 import Pagination from "../components/pagination";
@@ -10,17 +9,13 @@ export default function Posts({ data, pageContext }) {
   return (
     <Layout supportScrolled={pageContext.skip === 0}>
       {pageContext.skip === 0 && <Bio />}
-      <div
-        className={classNames("base-wrapper", {
-          "mt-20": pageContext.skip !== 0,
-        })}
-      >
+      <div className="base-wrapper">
         {posts.map(({ node }) => {
           return (
             <Link
               key={node.id}
               to={node.frontmatter.slug}
-              className="card-wrapper flex flex-col box-border shadow-md mt-6 lg:flex-row 
+              className="card-wrapper flex flex-col
               transition duration-500 ease-in-out transform hover:scale-105"
             >
               {/* maybe someday I will use it for cover function */}
@@ -30,15 +25,13 @@ export default function Posts({ data, pageContext }) {
                 image={node.frontmatter.cover.childImageSharp.gatsbyImageData}
                 alt="it's cover"
               /> */}
-              <div className="py-6 lg:py-7 px-4 lg:px-8">
-                <div className="text-xs text-content-300 dark:text-content-300-dark">
-                  {node.frontmatter.date}
-                </div>
-                <div key={node.id} className="pt-1 pb-2 text-xl font-bold">
-                  {node.frontmatter.title}
-                </div>
-                <div className="font-light">{node.excerpt}</div>
+              <div className="text-xs text-content-300 dark:text-content-300-dark">
+                {node.frontmatter.date}
               </div>
+              <div key={node.id} className="pt-1 pb-2 text-xl font-bold">
+                {node.frontmatter.title}
+              </div>
+              <div className="font-light">{node.excerpt}</div>
             </Link>
           );
         })}

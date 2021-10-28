@@ -9,10 +9,7 @@ export default function Post({ data, pageContext }) {
   return (
     <Layout>
       <div className="base-wrapper">
-        <div
-          style={{ height: "100%" }}
-          className="card-wrapper shadow-md px-7 py-6 mt-20"
-        >
+        <div className="card-wrapper">
           <div className="text-2xl font-bold">{title}</div>
           <div className="pt-2 text-sm text-content-300 dark:text-content-300-dark">
             {date}

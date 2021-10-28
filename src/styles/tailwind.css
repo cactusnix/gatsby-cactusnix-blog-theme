@@ -5,11 +5,14 @@
 /* for base wrapper */
 .base-wrapper {
   min-height: calc(100vh - theme("height.10"));
+  padding-top: theme("height.12");
   @apply w-full lg:w-3/5 px-4;
 }
 /* for card wrapper */
 .card-wrapper {
+  @apply mt-6;
   @apply bg-block-200 dark:bg-block-200-dark text-content-200 dark:text-content-200-dark;
+  @apply shadow-md py-6 lg:py-7 px-4 lg:px-8;
 }
 
 /* for pagination btn */
