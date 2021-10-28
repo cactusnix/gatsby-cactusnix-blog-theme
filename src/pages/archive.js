@@ -10,7 +10,7 @@ export default function Archive() {
           node {
             frontmatter {
               year: date(formatString: "YYYY")
-              monthDay: date(formatString: "MM-DD")
+              publishTime: date(formatString: "MMM DD, HH:mm")
               title
               slug
             }
@@ -25,7 +25,7 @@ export default function Archive() {
     const index = result.findIndex((it) => it.year === node.frontmatter.year);
     const item = {
       title: node.frontmatter.title,
-      monthDay: node.frontmatter.monthDay,
+      publishTime: node.frontmatter.publishTime,
       slug: node.frontmatter.slug,
     };
     if (index > -1) {
@@ -39,16 +39,19 @@ export default function Archive() {
   });
   return (
     <Layout>
-      <div>
+      <div
+        className="base-wrapper card-wrapper shadow-md mt-20 mb-10 
+        divide-y-2 di divide-solid"
+      >
         {result.map((it) => {
           return (
             <div>
-              {it.year}
+              <div>{it.year} Year</div>
               {it.list.map((temp) => {
                 return (
-                  <div>
+                  <div className="flex justify-between">
                     <Link to={temp.slug}>{temp.title}</Link>
-                    <div>{temp.monthDay}</div>
+                    <div>{temp.publishTime}</div>
                   </div>
                 );
               })}

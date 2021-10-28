@@ -1,8 +1,8 @@
 {
-  "name": "my-blog-site",
+  "name": "nix",
   "version": "1.0.0",
   "private": true,
-  "description": "My Blog Site",
+  "description": "Gatsby Blog Theme For My Blog Site",
   "author": "cactusnix",
   "keywords": [
     "gatsby"

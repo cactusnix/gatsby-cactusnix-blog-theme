@@ -2,10 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
-/* for post wrapper */
-.post-wrapper {
+/* for base wrapper */
+.base-wrapper {
   min-height: calc(100vh - theme("height.10"));
   @apply w-full lg:w-3/5 px-4;
+}
+/* for card wrapper */
+.card-wrapper {
+  @apply bg-block-200 dark:bg-block-200-dark text-content-200 dark:text-content-200-dark;
 }
 
 /* for pagination btn */

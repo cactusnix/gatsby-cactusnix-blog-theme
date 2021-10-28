@@ -11,7 +11,7 @@ export default function Posts({ data, pageContext }) {
     <Layout supportScrolled={pageContext.skip === 0}>
       {pageContext.skip === 0 && <Bio />}
       <div
-        className={classNames("post-wrapper", {
+        className={classNames("base-wrapper", {
           "mt-20": pageContext.skip !== 0,
         })}
       >
@@ -20,9 +20,7 @@ export default function Posts({ data, pageContext }) {
             <Link
               key={node.id}
               to={node.frontmatter.slug}
-              className="flex flex-col box-border shadow-md mt-6 lg:flex-row 
-              text-content-200 dark:text-content-200-dark
-              bg-block-200 dark:bg-block-200-dark
+              className="card-wrapper flex flex-col box-border shadow-md mt-6 lg:flex-row 
               transition duration-500 ease-in-out transform hover:scale-105"
             >
               {/* maybe someday I will use it for cover function */}

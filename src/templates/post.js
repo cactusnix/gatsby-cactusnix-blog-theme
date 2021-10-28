@@ -8,12 +8,10 @@ export default function Post({ data, pageContext }) {
   const { date, title } = data.markdownRemark.frontmatter;
   return (
     <Layout>
-      <div className="post-wrapper">
+      <div className="base-wrapper">
         <div
           style={{ height: "100%" }}
-          className="shadow-md
-          bg-block-200 dark:bg-block-200-dark 
-          text-content-200 dark:text-content-200-dark px-7 py-6 mt-20"
+          className="card-wrapper shadow-md px-7 py-6 mt-20"
         >
           <div className="text-2xl font-bold">{title}</div>
           <div className="pt-2 text-sm text-content-300 dark:text-content-300-dark">
