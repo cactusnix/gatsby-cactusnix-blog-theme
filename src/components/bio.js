@@ -62,7 +62,7 @@ export default function Bio() {
               return data[it.name] && data[it.name] ? (
                 <GatsbyImage
                   key={it.name}
-                  className="w-6 box-border mx-2"
+                  className="w-6 mx-2"
                   imgClassName="rounded-xl"
                   image={data[it.name].childImageSharp.gatsbyImageData}
                   layout="fullWidth"
