@@ -9,10 +9,10 @@
 - [x] pagination component, support dark mode & mobile view
 - [x] markdown style, use plugin code highlight & tailwind/typography
 - [x] archive component, support dark mode & mobile view
-- [ ] search function
 - [ ] mobile menu function
 - [ ] social link function
 - [ ] tag function
+- [ ] search function
 - [ ] google analysis
 - [ ] fix some sensitive data to publish theme
 

@@ -21,20 +21,6 @@ export default function Navigation(props) {
   const darkMode =
     window.matchMedia &&
     window.matchMedia("(prefers-color-scheme: dark)").matches;
-  const [scrolled, setScrolled] = useState(false);
-  useEffect(() => {
-    const handleScroll = () => {
-      const isScrolled = window.scrollY > 14 ? true : false;
-      if (isScrolled !== scrolled) {
-        setScrolled(isScrolled);
-      }
-    };
-    document.addEventListener("scroll", handleScroll, { passive: true });
-    return () => {
-      // clean up the event handler when the component unmounts
-      document.removeEventListener("scroll", handleScroll);
-    };
-  }, [scrolled]);
   return (
     <div
       className={classNames(
@@ -48,10 +34,7 @@ export default function Navigation(props) {
         "bg-block-100",
         "dark:bg-block-100-dark",
         "fixed",
-        "z-10",
-        {
-          "bg-opacity-0": props.supportScrolled && !scrolled,
-        }
+        "z-10"
       )}
     >
       {/* TODO use tailwind */}

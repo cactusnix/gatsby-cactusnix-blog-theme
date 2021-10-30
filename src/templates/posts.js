@@ -7,7 +7,7 @@ import Pagination from "../components/pagination";
 export default function Posts({ data, pageContext }) {
   const posts = data.allMarkdownRemark.edges;
   return (
-    <Layout supportScrolled={pageContext.skip === 0}>
+    <Layout>
       {pageContext.skip === 0 && <Bio />}
       <div className="base-wrapper">
         {posts.map(({ node }) => {
