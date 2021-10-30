@@ -4,10 +4,6 @@ import classNames from "classnames";
 
 export default function Pagination({ pageInfo }) {
   const { prev, next } = pageInfo;
-  // TODO use tailwind to replace this way
-  const darkMode =
-    window.matchMedia &&
-    window.matchMedia("(prefers-color-scheme: dark)").matches;
   return (
     <div
       className={classNames(
@@ -22,10 +18,10 @@ export default function Pagination({ pageInfo }) {
       )}
     >
       {prev && (
-        <Link to={prev.slug} className="pagination-btn mb-2 lg:mb-0">
+        <Link to={prev.slug} className="pagination-btn mb-4 lg:mb-0">
           <i
+            className="fill-current text-content-200 dark:text-content-200-dark"
             data-eva="arrow-back"
-            data-eva-fill={darkMode ? "#f5f5f7" : "#1d1d1f"}
           />
           <div>{prev.title}</div>
         </Link>
@@ -34,8 +30,8 @@ export default function Pagination({ pageInfo }) {
         <Link to={next.slug} className="pagination-btn">
           <div>{next.title}</div>
           <i
+            className="fill-current text-content-200 dark:text-content-200-dark"
             data-eva="arrow-forward"
-            data-eva-fill={darkMode ? "#f5f5f7" : "#1d1d1f"}
           />
         </Link>
       )}

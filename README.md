@@ -18,7 +18,7 @@
 
 ## TODO
 
-- [ ] eva icon color use tailwind
+- [x] eva icon color use tailwind
 - [ ] add background image for bio
 
 ## Maybe TODO

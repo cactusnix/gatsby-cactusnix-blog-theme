@@ -19,7 +19,7 @@ export default function Post({ data, pageContext }) {
             style={{ height: "1px" }}
           />
           <div
-            class="prose dark:prose-light"
+            className="prose dark:prose-light"
             dangerouslySetInnerHTML={{ __html: html }}
           ></div>
         </div>
