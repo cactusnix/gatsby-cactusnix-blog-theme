@@ -8,7 +8,7 @@
 - [x] post component, support dark mode & mobile view
 - [x] pagination component, support dark mode & mobile view
 - [x] markdown style, use plugin code highlight & tailwind/typography
-- [ ] archive component, support dark mode & mobile view
+- [x] archive component, support dark mode & mobile view
 - [ ] search function
 - [ ] mobile menu function
 - [ ] social link function
