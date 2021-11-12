@@ -3,13 +3,18 @@ import { graphql, Link } from "gatsby";
 import Layout from "../components/layout";
 import Bio from "../components/bio";
 import Pagination from "../components/pagination";
+import classNames from "classnames";
 
 export default function Posts({ data, pageContext }) {
   const posts = data.allMarkdownRemark.edges;
   return (
     <Layout>
       {pageContext.skip === 0 && <Bio />}
-      <div className="base-wrapper">
+      <div
+        className={classNames("base-wrapper", {
+          "pt-0": pageContext.skip === 0,
+        })}
+      >
         {posts.map(({ node }) => {
           return (
             <Link

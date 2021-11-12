@@ -5,8 +5,7 @@
 /* for base wrapper */
 .base-wrapper {
   min-height: calc(100vh - theme("height.10"));
-  padding-top: theme("height.14");
-  @apply w-full lg:w-3/5 px-4;
+  @apply w-full lg:w-3/5 px-4 p-14;
 }
 /* for card wrapper */
 .card-wrapper {
