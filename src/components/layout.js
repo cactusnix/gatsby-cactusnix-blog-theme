@@ -12,7 +12,7 @@ export default function Layout(props) {
   }, []);
   return (
     <div className="tracking-wide">
-      <Navigation />
+      <Navigation eva={eva} />
       <div className="flex flex-col items-center bg-block-300 dark:bg-block-300-dark">
         {children}
       </div>

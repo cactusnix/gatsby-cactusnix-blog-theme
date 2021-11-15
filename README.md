@@ -24,6 +24,8 @@
 ## Future TODO
 
 - [ ] optimize mobile menu pop
+- [ ] optimize duplicate tailwind css
+- [ ] optimize mobile menu click interactivity
 
 ## Maybe TODO
 
