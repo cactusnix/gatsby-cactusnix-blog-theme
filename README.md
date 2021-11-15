@@ -21,6 +21,10 @@
 - [x] eva icon color use tailwind
 - [ ] add background image for bio
 
+## Future TODO
+
+- [ ] optimize mobile menu pop
+
 ## Maybe TODO
 
 - [ ] post page min height 100%

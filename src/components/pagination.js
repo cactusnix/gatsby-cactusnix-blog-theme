@@ -7,11 +7,7 @@ export default function Pagination({ pageInfo }) {
   return (
     <div
       className={classNames(
-        "flex",
-        "py-6",
-        "lg:justify-between",
-        "flex-col",
-        "lg:flex-row",
+        "flex py-6 lg:justify-between flex-col lg:flex-row",
         {
           "float-right": !prev,
         }

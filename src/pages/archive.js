@@ -43,11 +43,14 @@ export default function Archive() {
         <div className="card-wrapper divide-y-2 di divide-solid">
           {result.map((it) => {
             return (
-              <div className="py-3">
+              <div key={it.list[0].slug} className="py-3">
                 <div className="text-xl font-bold mb-2">{it.year} Year</div>
                 {it.list.map((temp) => {
                   return (
-                    <div className="flex items-baseline lg:justify-between py-1">
+                    <div
+                      key={temp.slug}
+                      className="flex items-baseline lg:justify-between py-1"
+                    >
                       <Link className="hover:underline" to={temp.slug}>
                         {temp.title}
                       </Link>
