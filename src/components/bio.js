@@ -62,11 +62,12 @@ export default function Bio() {
               return data[it.name] && data[it.name] ? (
                 <GatsbyImage
                   key={it.name}
-                  className="w-6 mx-2"
+                  className="w-6 mx-2 cursor-pointer"
                   imgClassName="rounded-xl"
                   image={data[it.name].childImageSharp.gatsbyImageData}
                   layout="fullWidth"
                   alt={it.name}
+                  onClick={() => window.open(it.link, "_blank")}
                 />
               ) : null;
             })}
