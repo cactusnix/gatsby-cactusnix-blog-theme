@@ -26,6 +26,7 @@
 - [ ] optimize mobile menu pop
 - [ ] optimize duplicate tailwind css
 - [ ] optimize mobile menu click interactivity
+- [ ] img preview
 
 ## Maybe TODO
 
