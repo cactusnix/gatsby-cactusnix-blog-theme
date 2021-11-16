@@ -27,8 +27,11 @@
 - [ ] optimize duplicate tailwind css
 - [ ] optimize mobile menu click interactivity
 - [ ] img preview
+- [ ] add newsletter
+- [ ] tags page lazy load
 
 ## Maybe TODO
 
 - [ ] post page min height 100%
 - [ ] custom tailwind/typography
+- [ ] migrate to windicss

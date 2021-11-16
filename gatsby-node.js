@@ -21,6 +21,9 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   const result = await graphql(`
     {
       allMarkdownRemark(sort: { fields: frontmatter___date, order: DESC }) {
+        group(field: frontmatter___tags) {
+          fieldValue
+        }
         edges {
           node {
             id
@@ -37,6 +40,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     reporter.panicOnBuild('🚨  ERROR: Loading "createPages" query');
   }
   const posts = result.data.allMarkdownRemark.edges;
+  const tags = result.data.allMarkdownRemark.group;
   const perPage = 10;
   const length = Math.ceil(posts.length / perPage);
   Array.from({ length: length }, (_, i) => {
@@ -87,6 +91,15 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
                   title: posts[index - 1].node.frontmatter.title,
                 },
         },
+      },
+    });
+  });
+  tags.forEach((tag) => {
+    createPage({
+      path: `/tags/${tag.fieldValue}`,
+      component: path.resolve("./src/templates/tags.js"),
+      context: {
+        tag: tag.fieldValue,
       },
     });
   });

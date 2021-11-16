@@ -1,36 +1,29 @@
 import React from "react";
-import { graphql, Link } from "gatsby";
+import { graphql } from "gatsby";
 import Layout from "../components/layout";
-import Bio from "../components/bio";
-import Pagination from "../components/pagination";
 import classNames from "classnames";
 import PostCard from "../components/postCard";
 
-export default function Posts({ data, pageContext }) {
+export default function Tags({ data, pageContext }) {
   const posts = data.allMarkdownRemark.edges;
+  const { tag } = pageContext;
   return (
     <Layout>
-      {pageContext.skip === 0 && <Bio />}
-      <div
-        className={classNames("base-wrapper", {
-          "pt-0": pageContext.skip === 0,
-        })}
-      >
+      <div className="base-wrapper">
+        <div className="card-wrapper text-lg">{`Post that has ${tag}, total count is ${posts.length}`}</div>
         {posts.map(({ node }) => (
           <PostCard node={node} />
         ))}
-        <Pagination pageInfo={pageContext.pageInfo} />
       </div>
     </Layout>
   );
 }
 
 export const query = graphql`
-  query ($limit: Int, $skip: Int) {
+  query ($tag: String) {
     allMarkdownRemark(
       sort: { fields: frontmatter___date, order: DESC }
-      limit: $limit
-      skip: $skip
+      filter: { frontmatter: { tags: { in: [$tag] } } }
     ) {
       edges {
         node {
