@@ -2,6 +2,8 @@ import { graphql } from "gatsby";
 import React from "react";
 import Layout from "../components/layout";
 import Pagination from "../components/pagination";
+import "gitalk/dist/gitalk.css";
+import GitalkComponent from "gitalk/dist/gitalk-component";
 
 export default function Post({ data, pageContext }) {
   const { html } = data.markdownRemark;
@@ -24,6 +26,7 @@ export default function Post({ data, pageContext }) {
           ></div>
         </div>
         <Pagination pageInfo={pageContext.pageInfo} />
+        <GitalkComponent />
       </div>
     </Layout>
   );

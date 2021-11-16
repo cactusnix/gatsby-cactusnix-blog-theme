@@ -41,6 +41,11 @@ module.exports = {
         link: "/jike",
       },
     ],
+    gitTalk: {
+      clientID: "",
+      clientSecret: "",
+      repo: "",
+    },
   },
   plugins: [
     "gatsby-plugin-postcss",

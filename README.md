@@ -12,6 +12,7 @@
 - [x] mobile menu function
 - [x] social link function
 - [x] tag function
+- [ ] gitTalk function
 - [ ] search function
 - [ ] google analysis
 - [ ] fix some sensitive data to publish theme
