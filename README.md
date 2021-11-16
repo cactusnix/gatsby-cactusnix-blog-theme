@@ -11,7 +11,7 @@
 - [x] archive component, support dark mode & mobile view
 - [x] mobile menu function
 - [x] social link function
-- [ ] tag function
+- [x] tag function
 - [ ] search function
 - [ ] google analysis
 - [ ] fix some sensitive data to publish theme
