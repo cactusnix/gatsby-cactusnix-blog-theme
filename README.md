@@ -15,7 +15,8 @@
 - [ ] gitTalk function
 - [ ] search function
 - [ ] google analysis
-- [ ] fix some sensitive data to publish theme
+- [x] remove some sensitive data
+- [ ] convert starter to theme plugin
 
 ## TODO
 

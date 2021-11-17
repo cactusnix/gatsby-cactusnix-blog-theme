@@ -1,7 +1,6 @@
 import React from "react";
 import { graphql } from "gatsby";
 import Layout from "../components/layout";
-import classNames from "classnames";
 import PostCard from "../components/postCard";
 
 export default function Tags({ data, pageContext }) {

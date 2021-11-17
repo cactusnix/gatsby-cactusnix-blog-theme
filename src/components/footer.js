@@ -29,7 +29,7 @@ export default function Footer() {
         Theme{" "}
         <a
           className="hover:underline text-link dark:text-link-dark"
-          href="https://github.com/cactusnix/gatsby-cactusnix-blog-theme"
+          href="https://github.com/cactusnix/gatsby-theme-nix-blog"
         >
           Nix
         </a>
