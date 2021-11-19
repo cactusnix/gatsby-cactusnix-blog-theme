@@ -4,18 +4,20 @@ import Layout from "../components/layout";
 import Pagination from "../components/pagination";
 import "gitalk/dist/gitalk.css";
 import GitalkComponent from "gitalk/dist/gitalk-component";
+import Tags from "../components/tags";
 
 export default function Post({ data, pageContext }) {
   const { html } = data.markdownRemark;
-  const { date, title } = data.markdownRemark.frontmatter;
+  const { date, title, tags } = data.markdownRemark.frontmatter;
   return (
     <Layout>
       <div className="base-wrapper">
         <div className="card-wrapper">
           <div className="text-2xl font-bold">{title}</div>
-          <div className="pt-2 text-sm text-content-300 dark:text-content-300-dark">
+          <div className="py-2 text-sm text-content-300 dark:text-content-300-dark">
             {date}
           </div>
+          <Tags tags={tags} />
           <div
             className="mt-2 mb-6 bg-content-200 dark:bg-content-200-dark"
             style={{ height: "1px" }}
@@ -39,6 +41,7 @@ export const query = graphql`
       frontmatter {
         date(formatString: "MMM DD, YYYY")
         title
+        tags
       }
     }
   }

@@ -30,6 +30,7 @@ export const query = graphql`
             title
             date(formatString: "MMM DD, YYYY")
             slug
+            tags
           }
           excerpt(truncate: true, pruneLength: 85)
           id

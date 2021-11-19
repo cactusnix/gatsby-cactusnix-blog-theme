@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "gatsby";
+import Tags from "./tags";
 
 export default function PostCard({ node }) {
   return (
@@ -22,7 +23,8 @@ export default function PostCard({ node }) {
       <div key={node.id} className="pt-1 pb-2 text-xl font-bold">
         {node.frontmatter.title}
       </div>
-      <div className="font-light">{node.excerpt}</div>
+      <div className="font-light pb-2">{node.excerpt}</div>
+      {node.frontmatter.tags && <Tags tags={node.frontmatter.tags} />}
     </Link>
   );
 }
